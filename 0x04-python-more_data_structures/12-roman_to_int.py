@@ -8,9 +8,11 @@ def roman_to_int(roman_string):
     size = len(roman_string) - 1
     for i, j in enumerate(roman_string):
         number += romandic.get(j)
-    if romandic.get(roman_string[i]) > romandic.get(roman_string[i-1]):
+    while (romandic.get(roman_string[i]) >
+           romandic.get(roman_string[i-1]) and i > 0):
         number -= (romandic.get(roman_string[i]) +
                    romandic.get(roman_string[i-1]))
         number += (romandic.get(roman_string[i]) -
                    romandic.get(roman_string[i-1]))
+        i -= 2
     return number
