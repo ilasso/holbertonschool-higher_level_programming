@@ -1,9 +1,15 @@
+==========================
+How to use ``0-add_integer`` module
+==========================
+
+Using ``add_integer()``
+--------------------------
+This function adds two numeric values give by arguments
+
 _______________________
 Import function to test
 _______________________
 
-The ``add_integer`` module
-==========================
 
 >>> add_integer = __import__("0-add_integer").add_integer
 
