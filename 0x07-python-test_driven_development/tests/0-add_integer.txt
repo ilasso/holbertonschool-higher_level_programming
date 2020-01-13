@@ -63,6 +63,10 @@ TypeError: a must be an integer
 >>> add_integer(1+2, 3+4)
 10
 
+>>> add_integer()
+Traceback (most recent call last):
+TypeError: add_integer() missing 1 required positional argument: 'a'
+
 
 ________________________
 Non numeric cases
