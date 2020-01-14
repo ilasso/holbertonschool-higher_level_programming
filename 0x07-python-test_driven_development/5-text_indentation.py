@@ -26,9 +26,10 @@ def text_indentation(text):
             sw = 1
         elif sw == 1:
             if len(text) > j:
-                if text[j+1] == ' ':
+                if text[j] == ' ':
                     continue
                 else:
+                    print(i, end="")
                     sw = 0
         else:
             print(i, end="")
