@@ -9,19 +9,26 @@ def text_indentation(text):
     text_indentation: function that prints a text with 2 new lines after each
                       of these characters: ., ? and :
     @text: text to indent
-    Errors: no one
+    Errors: if text not a string raise
     return: no one
     """
     if type(text) != str:
         raise TypeError("text must be a string")
+    if len(text) == 0:
+        raise TypeError("text must be a string")
     sw = 0
+    text = text.rstrip()
+    text = text.lstrip()
     for j, i in enumerate(text):
         if i == '.' or i == '?' or i == ':':
             print(i, end="")
             print("\n")
             sw = 1
         elif sw == 1:
-            sw = 0
-            continue
+            if len(text) > j:
+                if text[j+1] == ' ':
+                    continue
+                else:
+                    sw = 0
         else:
             print(i, end="")
