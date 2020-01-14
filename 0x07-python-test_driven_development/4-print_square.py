@@ -7,7 +7,7 @@
 
 def print_square(size):
     """
-       Name Function: my_print
+       Name Function: print_square
        Description:prints in stdout the square with the character #
        @size:size of a square to print
        return: nothing
