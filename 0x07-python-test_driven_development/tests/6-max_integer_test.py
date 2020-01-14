@@ -28,6 +28,8 @@ class TestMaxInteger(unittest.TestCase):
         self.assertEqual(max_integer(['a', 'b']), 'b')
         self.assertEqual(max_integer((1, 5, -3, 7)), 7)
         self.assertEqual(max_integer("Julien"), "u")
+        self.assertEqual(max_integer([1, 3, float("inf")]), float("inf"))
+        self.assertEqual(max_integer([1, 3, float("NaN")]), 3)
 
     def test_RaiseError(self):
         """ Exeptions test cases"""
