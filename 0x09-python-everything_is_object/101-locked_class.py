@@ -1,3 +1,4 @@
+#!/usr/bin/python3
 """
    Name Module: 101-locked_class.
    Description: Module prevents the user from dynamically creating new instance
