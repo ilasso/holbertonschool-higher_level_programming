@@ -1,0 +1,110 @@
+==========================
+How to use ``7-base_geometry`` module
+==========================
+
+Using ``BaseGeometry.integer_validator``
+--------------------------
+This function validate if a value is a intenger
+
+_______________________
+Import Class to test
+_______________________
+
+
+>>> BaseGeometry = __import__("7-base_geometry").BaseGeometry
+
+__________________________
+Documentation Verification
+__________________________
+
+
+>>> len(__import__("7-base_geometry").__doc__) > 0
+True
+
+>>> len(__import__("7-base_geometry").BaseGeometry.__doc__) > 0
+True
+
+>>> len(__import__("7-base_geometry").BaseGeometry.area.__doc__) > 0
+True
+
+>>> len(__import__("7-base_geometry").BaseGeometry.integer_validator.__doc__) > 0
+True
+
+__________________________
+Trivial cases
+__________________________
+
+>>> bg = BaseGeometry()
+
+>>> bg.integer_validator("my_int", 12)
+
+>>> bg.integer_validator("width", 89)
+
+
+>>> bg.integer_validator("age", 0)
+Traceback (most recent call last):
+ValueError: age must be greater than 0
+
+>>> bg.integer_validator("name", "John")
+Traceback (most recent call last):
+TypeError: name must be an integer
+
+>>> bg.integer_validator("distance", -4)
+Traceback (most recent call last):
+ValueError: distance must be greater than 0
+
+>>> bg.integer_validator("infinity", float("inf"))
+Traceback (most recent call last):
+TypeError: infinity must be an integer
+
+>>> bg.integer_validator("big", 10e1000)
+Traceback (most recent call last):
+TypeError: big must be an integer
+
+>>> bg.integer_validator("float", 5.9)
+Traceback (most recent call last):
+TypeError: float must be an integer
+
+>>> bg.integer_validator("bool", False)
+Traceback (most recent call last):
+TypeError: bool must be an integer
+
+>>> bg.integer_validator("list", [1,2,3,4])
+Traceback (most recent call last):
+TypeError: list must be an integer
+
+________________________
+Argument Cases
+________________________
+
+>>> bg.integer_validator()
+Traceback (most recent call last):
+TypeError: integer_validator() missing 2 required positional arguments: 'name' and 'value'
+
+>>> bg.integer_validator(None, 1)
+
+
+
+>>> bg.integer_validator("NoneVal", None)
+Traceback (most recent call last):
+TypeError: NoneVal must be an integer
+
+>>> bg.integer_validator("Alone")
+Traceback (most recent call last):
+TypeError: integer_validator() missing 1 required positional argument: 'value'
+
+
+________________________
+Non numeric cases
+________________________
+
+
+________________________
+Number Float Cases
+________________________
+
+
+________________________
+Overflow Cases
+________________________
+
