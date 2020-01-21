@@ -1,4 +1,8 @@
 #!/usr/bin/python3
+"""
+   Name Module: 8-rectangle
+   Description: Module that that inherits from BaseGeometry (7-base_geometry.py).
+"""
 
 BaseGeometry = __import__('7-base_geometry').BaseGeometry
 
