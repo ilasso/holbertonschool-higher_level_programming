@@ -2,12 +2,12 @@
 How to use ``1-my_list`` module
 ==========================
 
-Using ``print_sorted()``
+Using ``MyList``
 --------------------------
 This function prints the list, but sorted (ascending sort)
 
 _______________________
-Import function to test
+Import Class to test
 _______________________
 
 
