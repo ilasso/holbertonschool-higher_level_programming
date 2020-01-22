@@ -43,7 +43,7 @@ class Student:
             Name function: to_json
             Description: replaces all attributes of the Student instance
         """
-
-        self.first_name = json.get('first_name')
-        self.last_name = json.get('last_name')
-        self.age = age = json.get('age')
+        if json is not None:
+            self.first_name = json.get('first_name')
+            self.last_name = json.get('last_name')
+            self.age = json.get('age')
