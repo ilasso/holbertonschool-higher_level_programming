@@ -16,7 +16,7 @@ def pascal_triangle(n):
     if n == 1:
         return [[1]]
     triangle_list = [[1], [1, 1]]
-    for i in range(1, n):
+    for i in range(1, n-1):
         triangle_row = [1]
         for j in range(0, len(triangle_list[i])-1):
             triangle_row.extend([triangle_list[i][j] + triangle_list[i][j+1]])
