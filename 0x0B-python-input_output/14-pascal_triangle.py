@@ -10,6 +10,11 @@ def pascal_triangle(n):
         Name function: pascal_triangle
         Description: init  class Student
     """
+
+    if n <= 0:
+        return []
+    if n == 1:
+        return [1]
     triangle_list = [[1], [1, 1]]
     for i in range(1, n):
         triangle_row = [1]
