@@ -8,18 +8,19 @@
 def pascal_triangle(n):
     """
         Name function: pascal_triangle
-        Description: init  class Student
+        Description: return matrix pascal
     """
 
     if n <= 0:
-        return [[]]
+        return []
     if n == 1:
         return [[1]]
     triangle_list = [[1], [1, 1]]
     for i in range(1, n-1):
         triangle_row = [1]
         for j in range(0, len(triangle_list[i])-1):
-            triangle_row.extend([triangle_list[i][j] + triangle_list[i][j+1]])
+            element = triangle_list[i][j] + triangle_list[i][j+1]
+            triangle_row.extend([element])
         triangle_row += [1]
         triangle_list.append(triangle_row)
     return triangle_list
