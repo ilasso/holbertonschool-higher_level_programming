@@ -35,9 +35,16 @@ class TestSquare(unittest.TestCase):
         s1 = Square(5)
         self.assertEqual(s1.id, 1)
         self.assertEqual(s1.area(), 25)
+        self.assertEqual(s1.size, 5)
+        s1.size = 10
+        self.assertEqual(s1.size, 10)
+
         s3 = Square(2, 2)
         self.assertEqual(s3.id, 2)
         self.assertEqual(s3.area(), 4)
+        self.assertEqual(s3.size, 2)
+        s3.size = 15
+        self.assertEqual(s3.size, 15)
 
     def test_display(self):
         """ Function: test_display
@@ -85,6 +92,12 @@ class TestSquare(unittest.TestCase):
         sys.stdout = temp
         display = "[Square] (1) 2/0 - 2"
         self.assertEqual(display, str(s3))
+
+    def test_domain(self):
+        """domain tests"""
+        with self.assertRaises(TypeError):
+            s3 = Square(3)
+            s3.size = "hola"
 
 if __name__ == '__main__':
     unittest.main()
