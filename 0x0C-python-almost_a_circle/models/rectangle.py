@@ -75,11 +75,16 @@ class Rectangle(Base):
             Return: area of rectangle
         """
         return self.width * self.height
+
     def display(self):
         """ Function:display
             Return: draw rectangle with # char
         """
+        for k in range(0,self.y):
+            print() 
         for i in range(0,self.height):
+            for l in range(0,self.x):
+                print(" ", end="")
             print("#",end="")
             for j in range(1, self.width):
                  print("#",end="")
@@ -87,3 +92,7 @@ class Rectangle(Base):
                      print()
         if self.width == 1:
             print()
+
+    def __str__(self):
+        string = "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        return string
