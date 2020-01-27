@@ -25,6 +25,8 @@ class TestRectangle(unittest.TestCase):
         self.assertTrue(len(Rectangle.__init__.__doc__) > 0)
         self.assertTrue(len(Rectangle.area.__doc__) > 0)
         self.assertTrue(len(Rectangle.display.__doc__) > 0)
+        self.assertTrue(len(Rectangle.__str__.__doc__) > 0)
+        self.assertTrue(len(Rectangle.update.__doc__) > 0)
 
     def test_trivial(self):
         """ Function: test_trivial
@@ -152,14 +154,38 @@ class TestRectangle(unittest.TestCase):
         self.assertEqual(display, out)
 
     def test_str(self):
+        """__str__ tests"""
         temp = sys.stdout
         sys.stdout = StringIO()
-        r7 = Rectangle(4, 6, 2, 1, 12)
+        r9 = Rectangle(4, 6, 2, 1, 12)
         out = sys.stdout.getvalue()
         sys.stdout.close()
         sys.stdout = temp
         display = "[Rectangle] (12) 2/1 - 4/6"
-        self.assertEqual(display, str(r7))
+        self.assertEqual(display, str(r9))
+
+    def test_update(self, *args):
+        """update  tests"""
+        r10 = Rectangle(10, 10, 10, 10)
+        r10.update(89, 2, 3, 4, 5)
+
+        self.assertEqual(r10.id, 89)
+        self.assertEqual(r10.width, 2)
+        self.assertEqual(r10.height, 3)
+        self.assertEqual(r10.x, 4)
+        self.assertEqual(r10.y, 5)
+
+        r10.update(3, 2, 89)
+        self.assertEqual(r10.id, 3)
+        self.assertEqual(r10.width, 2)
+        self.assertEqual(r10.height, 89)
+
+        r10.update(x=1, height=2, y=3, width=4)
+        self.assertEqual(r10.x, 1)
+        self.assertEqual(r10.height, 2)
+        self.assertEqual(r10.y, 3)
+        self.assertEqual(r10.width, 4)
+
 
 if __name__ == '__main__':
     unittest.main()

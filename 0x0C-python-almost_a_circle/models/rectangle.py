@@ -80,19 +80,53 @@ class Rectangle(Base):
         """ Function:display
             Return: draw rectangle with # char
         """
-        for k in range(0,self.y):
-            print() 
-        for i in range(0,self.height):
-            for l in range(0,self.x):
+        for k in range(0, self.y):
+            print()
+        for i in range(0, self.height):
+            for l in range(0, self.x):
                 print(" ", end="")
-            print("#",end="")
+            print("#", end="")
             for j in range(1, self.width):
-                 print("#",end="")
-                 if j == (self.width-1):
-                     print()
+                print("#", end="")
+                if j == (self.width - 1):
+                    print()
         if self.width == 1:
             print()
 
     def __str__(self):
-        string = "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x, self.y, self.width, self.height)
+        """ Function:__str__
+            Return: string representation class rectangle
+        """
+        string = "[Rectangle] ({}) {}/{} - {}/{}".format(self.id, self.x,
+                                                         self.y, self.width,
+                                                         self.height)
         return string
+
+    def update(self, *args, **kwargs):
+        """ Function:update
+            Return: assign an argument to each attribute
+        """
+        if len(list(args)) > 0:
+            for i, j in enumerate(args):
+                if i == 0:
+                    self.id = args[i]
+                elif i == 1:
+                    self.width = args[i]
+                elif i == 2:
+                    self.height = args[i]
+                elif i == 3:
+                    self.x = args[i]
+                else:
+                    self.y = args[i]
+        else:
+            for i in kwargs.items():
+                if i[0] == "id":
+                    self.id = i[1]
+                elif i[0] == "width":
+                    self.width = i[1]
+                elif i[0] == "height":
+                    self.height = i[1]
+                elif i[0] == "x":
+                    self.x = i[1]
+                elif i[0] == "y":
+                    self.y = i[1]
