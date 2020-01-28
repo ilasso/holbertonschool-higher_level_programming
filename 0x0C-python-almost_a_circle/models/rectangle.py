@@ -80,17 +80,17 @@ class Rectangle(Base):
         """ Function:display
             Return: draw rectangle with # char
         """
-        for k in range(0, self.y):
+        for k in range(0, self.__y):
             print()
-        for i in range(0, self.height):
-            for l in range(0, self.x):
+        for i in range(0, self.__height):
+            for l in range(0, self.__x):
                 print(" ", end="")
             print("#", end="")
-            for j in range(1, self.width):
+            for j in range(1, self.__width):
                 print("#", end="")
-                if j == (self.width - 1):
+                if j == (self.__width - 1):
                     print()
-        if self.width == 1:
+        if self.__width == 1:
             print()
 
     def __str__(self):
