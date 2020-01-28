@@ -2,6 +2,7 @@
 """ Module: base """
 
 import json
+import os
 
 
 class Base:
@@ -59,3 +60,18 @@ class Base:
             new = Square(2)
         new.update(**dictionary)
         return new
+
+    @classmethod
+    def load_from_file(cls):
+        """ Function: load_from_file
+        """
+        lista = []
+        filename = "{}.json".format(cls.__name__)
+        if os.path.isfile(filename):
+            with open(filename) as f:
+                obj = cls.from_json_string(f.read())
+                for dictionary in obj:
+                    lista.append(cls.create(**dictionary))
+                return lista
+        else:
+            return []
