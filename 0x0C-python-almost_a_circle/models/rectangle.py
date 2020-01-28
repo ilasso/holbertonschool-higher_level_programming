@@ -83,14 +83,10 @@ class Rectangle(Base):
         for k in range(0, self.__y):
             print()
         for i in range(0, self.__height):
-            for l in range(0, self.__x):
-                print(" ", end="")
-            print("#", end="")
-            for j in range(1, self.__width):
-                print("#", end="")
-                if j == (self.__width - 1):
-                    print()
-        if self.__width == 1:
+            for x in range(0, self.__x):
+                print(' ', end="")
+            for j in range(0, self.__width):
+                print('#', end="")
             print()
 
     def __str__(self):
