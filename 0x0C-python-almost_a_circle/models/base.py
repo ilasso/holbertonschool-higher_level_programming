@@ -3,6 +3,7 @@
 
 import json
 
+
 class Base:
     """ Class: Base"""
     _nb_objects = 0
@@ -23,4 +24,3 @@ class Base:
         if list_dictionaries is None or len(list_dictionaries) == 0:
             return "[]"
         return json.dumps(list_dictionaries)
-   
