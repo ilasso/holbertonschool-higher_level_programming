@@ -3,7 +3,7 @@
    argv[1] : user, argv[2]:Passwd. argv[3]: db
 """
 import sys
-from model_state import Base, States
+from model_state import Base, State
 
 from sqlalchemy import (create_engine)
 

@@ -10,7 +10,7 @@ from sqlalchemy import Integer, String, Column
 Base = declarative_base()
 
 
-class States(Base):
+class State(Base):
     """
     Class:States
           class based on State table desc
