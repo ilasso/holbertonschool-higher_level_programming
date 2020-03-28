@@ -1,8 +1,8 @@
 #!/usr/bin/python3
 """
-module:1-filter_states.py
+module:2-my_filter_states
 description: use MySQLdb package to access db and display states rows
-             where name start with Upper 'N'
+             where name = argv[4]
 """
 import MySQLdb
 from sys import argv
@@ -15,7 +15,8 @@ if __name__ == "__main__":
                          db=argv[3])
     cursor = db.cursor()
     numrows = cursor.execute("SELECT * FROM states\
-                              WHERE name like 'N%' ORDER BY id ASC")
+                              WHERE name = '{}'\
+                              ORDER BY id ASC".format(argv[4]))
     for i in cursor.fetchall():
         print(i)
     cursor.close()
