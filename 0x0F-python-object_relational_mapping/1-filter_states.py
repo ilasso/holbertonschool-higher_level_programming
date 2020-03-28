@@ -14,10 +14,9 @@ if __name__ == "__main__":
                          passwd=argv[2],
                          db=argv[3])
     cursor = db.cursor()
-    compares = "N%"
-    numrows = cursor.execute("SELECT * FROM states\
-                              WHERE name like %s ORDER BY id ASC",(compares,))
+    numrows = cursor.execute("SELECT * FROM states ORDER BY id ASC")
     for i in cursor.fetchall():
-        print(i)
+        if i[1][0] == "N": 
+            print(i)
     cursor.close()
     db.close()
