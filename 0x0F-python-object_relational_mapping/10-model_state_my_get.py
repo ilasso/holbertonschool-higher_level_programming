@@ -17,9 +17,8 @@ if __name__ == "__main__":
              pool_pre_ping=True)
     session = Session(engine)
     obj = session.query(State).filter(State.name == argv[4])\
-                              .all()
-    if obj != []:
-        for i in obj:
-            print(i.id)
-    else:
+                              .first()
+    if obj is None:
         print("Not Found")
+    else:
+        print(obj.id)
