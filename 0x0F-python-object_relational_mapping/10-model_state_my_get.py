@@ -17,7 +17,6 @@ if __name__ == "__main__":
              pool_pre_ping=True)
     session = Session(engine)
     obj = session.query(State).filter(State.name == argv[4])\
-                              .order_by(State.id.asc())\
                               .all()
     if obj != []:
         for i in obj:
