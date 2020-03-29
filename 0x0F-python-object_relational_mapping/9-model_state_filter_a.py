@@ -16,5 +16,8 @@ if __name__ == "__main__":
                                                          argv[3]),
              pool_pre_ping=True)
     session = Session(engine)
-    for i in session.query(State).filter(State.name.like('%a%')).order_by(State.id.asc()):
+    obj_list = session.query(State)\
+                      .filter(State.name.like('%a%'))\
+                      .order_by(State.id.asc())
+    for i in obj_list:
         print(str(i.id)+": "+i.name)
