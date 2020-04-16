@@ -13,7 +13,7 @@ if __name__ == '__main__':
         dictdatain = {'q': letter}
     elif len(argv) == 1:
         dictdatain = {'q': ""}
-    req = requests.post('http://0.0.0.0:5000/search_userxx', data=dictdatain)
+    req = requests.post('http://0.0.0.0:5000/search_user', data=dictdatain)
     try:
         json = req.json()
     except ValueError:
