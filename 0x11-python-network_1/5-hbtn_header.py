@@ -10,6 +10,5 @@ from sys import argv
 
 if __name__ == '__main__':
     resp = requests.get(argv[1])
-    xrequestid = resp.headers['X-Request-Id']
-    if xrequestid is not None:
-        print(xrequestid)
+    if 'X-Request-Id' in resp.headers:
+        print(resp.headers['X-Request-Id'])
