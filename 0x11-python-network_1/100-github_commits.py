@@ -19,7 +19,7 @@ if __name__ == '__main__':
         count = count + 1
         for j, k in i.items():
             if j == 'commit':
-                sha = k['tree']['sha']
+                sha = i['sha']
                 name = k['author']['name']
                 print("{}: {}".format(sha, name))
                 if count == 10:
