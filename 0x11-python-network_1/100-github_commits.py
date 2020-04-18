@@ -8,8 +8,8 @@ if __name__ == '__main__':
     import sys
     import requests
 
-    user = sys.argv[1]
-    repo = sys.argv[2]
+    user = sys.argv[2]
+    repo = sys.argv[1]
 
     url = "https://api.github.com/repos/{}/{}/commits".format(user, repo)
 
