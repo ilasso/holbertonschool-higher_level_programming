@@ -6,11 +6,11 @@ if (process.argv.length <= 3) {
 let max = 0;
 let secmax = 0;
 for (let i = 2; i < process.argv.length; i++) {
-  if (process.argv[i] > max) {
+  if (parseInt(process.argv[i], 10) > max) {
     secmax = max;
-    max = process.argv[i];
-  } else if (process.argv[i] > secmax) {
-    secmax = process.argv[i];
+    max = parseInt(process.argv[i], 10);
+  } else if (parseInt(process.argv[i], 10) >= secmax) {
+    secmax = parseInt(process.argv[i], 10);
   }
 }
 console.log(secmax);
