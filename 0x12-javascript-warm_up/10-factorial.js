@@ -1,5 +1,8 @@
 #!/usr/bin/node
 function factorial (n) {
+  if (isNaN(parseInt(n, 10))) {
+    return 1;
+  }
   if (n === 0) {
     return 1;
   }
