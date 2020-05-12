@@ -5,5 +5,6 @@ request(url, function (error, response, body) {
   if (error) {
     console.error(error);
   }
-  console.log(JSON.parse(body).title);
+  const title = JSON.parse(body);
+  console.log(title.title);
 });
